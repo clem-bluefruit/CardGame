@@ -10,12 +10,12 @@ namespace CARDGAME
 	class Deck
 	{
 	public:
-		Deck();
-		Deck(const size_t size);
+		Deck(size_t size = 10);
 		size_t DeckSize() const;
+		void AddCard();
 	private:
 		std::vector<Card*> m_cardDeck;
-		const size_t maxDeckSize = 10;
+		const size_t m_initialDeckSize;
 	};
 }
 #endif

@@ -29,3 +29,12 @@ TEST(SimpleDeck, Initialising_custom_size_deck)
 	Deck d(1);
 	ASSERT_EQ(1, d.DeckSize());
 }
+
+TEST(SimpleDeck, Initialise_empty_deck_Manually_add_cards)
+{
+	Deck d(0);
+	d.AddCard();
+	ASSERT_EQ(1, d.DeckSize());
+	d.AddCard();
+	ASSERT_EQ(2, d.DeckSize());
+}
