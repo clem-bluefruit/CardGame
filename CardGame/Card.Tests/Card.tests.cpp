@@ -37,4 +37,52 @@ TEST(SimpleDeck, Initialise_empty_deck_Manually_add_cards)
 	ASSERT_EQ(1, d.DeckSize());
 	d.AddCard();
 	ASSERT_EQ(2, d.DeckSize());
+	d.AddCard();
+	ASSERT_EQ(3, d.DeckSize());
+}
+
+TEST(SimpleDeck, Inserting_custom_card_name)
+{
+	Deck d(0);
+	d.AddCard("Ace");
+	ASSERT_EQ(1, d.DeckSize());
+}
+
+TEST(SimpleDeck, Inserting_and_viewing_a_custom_named_card)
+{
+	Deck d(0);
+	d.AddCard("Ace");
+	ASSERT_EQ("Ace", d.ViewCardName(0));
+	d.AddCard("Joker");
+	d.AddCard("King");
+	ASSERT_EQ("King", d.ViewCardName(2));
+}
+
+TEST(SimpleDeck, Maximum_deck_size_limits_number_of_cards)
+{
+	Deck d(0);
+	const size_t maxSize = 5;
+	d.SetMaxDeckSize(maxSize);
+	for (size_t i = 0; i <= maxSize; ++i)
+	{
+		d.AddCard();
+	}
+	ASSERT_EQ(5, d.DeckSize());
+}
+
+TEST(SimpleDeck, Two_decks_differing_max_size_limits)
+{
+	Deck PlayerOne(10);
+	Deck PlayerTwo(10);
+	const size_t playerOneMaxSize = 20;
+	const size_t playerTwoMaxSize = 50;
+	PlayerOne.SetMaxDeckSize(playerOneMaxSize);
+	PlayerTwo.SetMaxDeckSize(playerTwoMaxSize);
+	for (size_t i = 0; i < playerTwoMaxSize; ++i)
+	{
+		PlayerOne.AddCard();
+		PlayerTwo.AddCard();
+	}
+	ASSERT_EQ(playerOneMaxSize, PlayerOne.DeckSize());
+	ASSERT_EQ(playerTwoMaxSize, PlayerTwo.DeckSize());
 }
