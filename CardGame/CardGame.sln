@@ -11,6 +11,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GTest", "GTest\GTest.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Card.Tests", "Card.Tests\Card.Tests.vcxproj", "{3A7ECC67-E1C1-41AF-A2BF-84F178CC8E9E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnapCards", "..\SnapCards\SnapCards.vcxproj", "{ABBB7AFE-9C84-4730-B101-56F80DAABEFB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Snap.Game.Tests", "Snap.Game.Tests\Snap.Game.Tests.vcxproj", "{680115A5-FD43-44F7-A313-E4779E785776}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -33,6 +37,14 @@ Global
 		{3A7ECC67-E1C1-41AF-A2BF-84F178CC8E9E}.Debug|Win32.Build.0 = Debug|Win32
 		{3A7ECC67-E1C1-41AF-A2BF-84F178CC8E9E}.Release|Win32.ActiveCfg = Release|Win32
 		{3A7ECC67-E1C1-41AF-A2BF-84F178CC8E9E}.Release|Win32.Build.0 = Release|Win32
+		{ABBB7AFE-9C84-4730-B101-56F80DAABEFB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ABBB7AFE-9C84-4730-B101-56F80DAABEFB}.Debug|Win32.Build.0 = Debug|Win32
+		{ABBB7AFE-9C84-4730-B101-56F80DAABEFB}.Release|Win32.ActiveCfg = Release|Win32
+		{ABBB7AFE-9C84-4730-B101-56F80DAABEFB}.Release|Win32.Build.0 = Release|Win32
+		{680115A5-FD43-44F7-A313-E4779E785776}.Debug|Win32.ActiveCfg = Debug|Win32
+		{680115A5-FD43-44F7-A313-E4779E785776}.Debug|Win32.Build.0 = Debug|Win32
+		{680115A5-FD43-44F7-A313-E4779E785776}.Release|Win32.ActiveCfg = Release|Win32
+		{680115A5-FD43-44F7-A313-E4779E785776}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

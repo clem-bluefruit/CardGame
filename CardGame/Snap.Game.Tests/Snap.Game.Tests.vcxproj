@@ -10,21 +10,14 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\gtest-1.7.0\include\gtest\gtest.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\gtest-1.7.0\src\gtest-all.cc" />
-    <ClCompile Include="..\gtest-1.7.0\src\gtest_main.cc" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{65FDCDAC-7D50-424A-B65E-864472D5D4F0}</ProjectGuid>
+    <ProjectGuid>{680115A5-FD43-44F7-A313-E4779E785776}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>GTest</RootNamespace>
+    <RootNamespace>SnapGameTests</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -41,16 +34,19 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\Shared\SnapCards.props" />
     <Import Project="..\..\Shared\Gtest.props" />
+    <Import Project="..\..\Shared\Card.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\Shared\SnapCards.props" />
     <Import Project="..\..\Shared\Gtest.props" />
+    <Import Project="..\..\Shared\Card.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -85,6 +81,20 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Card\Card.vcxproj">
+      <Project>{b2ac2969-95bc-47f0-aabf-14837baf2322}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SnapCards\SnapCards.vcxproj">
+      <Project>{abbb7afe-9c84-4730-b101-56f80daabefb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\GTest\GTest.vcxproj">
+      <Project>{65fdcdac-7d50-424a-b65e-864472d5d4f0}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Snap.Cards.Tests.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
