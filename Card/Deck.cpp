@@ -15,6 +15,11 @@ size_t Deck::DeckSize() const
 	return m_cardDeck.size();
 }
 
+size_t Deck::RemainingDeckCapacity() const
+{
+	return (m_maxDeckSize - DeckSize());
+}
+
 void Deck::AddCard(const string name)
 {
 	if (!DeckLimitReached())

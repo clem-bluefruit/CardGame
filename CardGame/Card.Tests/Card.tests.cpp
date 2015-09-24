@@ -86,3 +86,23 @@ TEST(SimpleDeck, Two_decks_differing_max_size_limits)
 	ASSERT_EQ(playerOneMaxSize, PlayerOne.DeckSize());
 	ASSERT_EQ(playerTwoMaxSize, PlayerTwo.DeckSize());
 }
+
+TEST(SimpleDeck, Deck_with_maximum_size_returns_remaining_deck_capacity)
+{
+	Deck d(5);
+	const size_t maxDeckSize = 10;
+	d.SetMaxDeckSize(maxDeckSize);
+	ASSERT_EQ(5, d.RemainingDeckCapacity());
+	
+	Deck cards(10);
+	cards.SetMaxDeckSize(maxDeckSize);
+	ASSERT_EQ(0, cards.RemainingDeckCapacity());
+
+	Deck moreCards;
+	moreCards.SetMaxDeckSize(maxDeckSize);
+	ASSERT_EQ(0, moreCards.RemainingDeckCapacity());
+
+	Deck evenMoreCards(0);
+	evenMoreCards.SetMaxDeckSize(maxDeckSize);
+	ASSERT_EQ(10, evenMoreCards.RemainingDeckCapacity());
+}
