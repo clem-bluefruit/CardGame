@@ -11,9 +11,9 @@ namespace CARDGAME
 	{
 	public:
 		Deck(size_t size = 10);
-		size_t DeckSize() const;
+		virtual size_t DeckSize() const;
 		size_t RemainingDeckCapacity() const;
-		void AddCard(const std::string name = "Card");
+		virtual void AddCard(const std::string name = "Card");
 		void SetMaxDeckSize(size_t size);
 		std::string ViewCardName(unsigned int card) const;
 	private:
