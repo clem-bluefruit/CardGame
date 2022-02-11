@@ -1,6 +1,6 @@
 #include <gtest\gtest.h>
-#include <Card.h>
-#include <Deck.h>
+#include "../../Card/Card.h"
+#include "../../Card/Deck.h"
 
 using namespace ::testing;
 using namespace ::CARDGAME;
